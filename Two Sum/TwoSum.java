@@ -1,5 +1,7 @@
 import java.util.*;
-
+/**
+ * @author suriChen 
+ * */
 public class TwoSum {
 	public static void main(String[] args) {
 		int a[]= {3,5,6,4,3,1};
@@ -7,7 +9,7 @@ public class TwoSum {
 		int temp[] = new int[2];
 		System.out.println(Arrays.toString(getIndex(a,target)));
 	}
-
+//Ç¶Ì×Ñ­»·O(n^2)
 	public static int[] getIndex(int[] a,int target) {
 		int temp[] = new int[2];
 		for(int i=0;i<a.length/2;i++) {
@@ -20,4 +22,18 @@ public class TwoSum {
 		}
 		return temp;
 	}
+
+//HashMap
+	public static int[] getIndices(int[] num,int target) {
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		int indices[] = new int[2];
+		for(int i=0;i<num.length;i++) {
+			if(map.containsKey(target - num[i])) {
+				indices[0] = map.get(target - num[i]);
+				indices[1] = i;
+			}
+		}
+		return indices;
+	}
+	
 }
