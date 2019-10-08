@@ -29,6 +29,11 @@ public class SelectSort {
 			}
 		}
 		return array;
+		/**
+		 * 选择排序至多交换N次
+		 * 比较次数：n-1,n-2,n-3....共n(n-1)/2
+		 * 时间复杂度为O(n^2)
+		 * */
 	}
 	
 	public static void main(String[] args){
