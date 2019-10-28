@@ -1,5 +1,7 @@
 package point.to.Future;
-
+/**
+*@author suriChen
+*/
 public class LongestSubstring {
 	public static String longestPalindrome(String s) {
 	    if (s.equals(""))
