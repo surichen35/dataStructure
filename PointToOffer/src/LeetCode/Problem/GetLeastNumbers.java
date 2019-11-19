@@ -9,6 +9,32 @@ import java.util.Set;
  * 	获取最小的K个数
  * */
 public class GetLeastNumbers {
+	//冒泡排序
+	 public static ArrayList<Integer> GetBybubbleSort(int[] a, int k){
+		 ArrayList<Integer> res = new ArrayList<>();
+		 if(a.length == 0 || k>a.length || k==0)
+			 return res;
+		 int count = k;
+		 for(int i=0;i<a.length;i++) {
+			 for(int j=i+1;j<a.length;j++) {
+				 if(a[i]>a[j]) {
+					 int temp = a[j];
+					 a[j] = a[i];
+					 a[i] = temp;
+				 }
+				 }
+				 if((i>0 && a[i]!=a[i-1]) || (i==0))
+					{
+					 res.add(a[i]);
+					 count--;
+					}
+				 if(count==0)
+					return res;
+			 }
+			return null;
+	 }
+	 
+	 //傻瓜办法
 	 public static ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
 		 ArrayList<Integer> res = new ArrayList<>();
 		 Set<Integer> hashSet = new HashSet<>();
@@ -52,7 +78,9 @@ public class GetLeastNumbers {
 			quickSort(arr,l+1,right);
 		}
 	 public static void main(String[] args) {
-		 int[] arr = {};
-		 System.out.println(GetLeastNumbers_Solution(arr,6).toString());
+		 int[] arr = {3};
+		 
+		 System.out.println(GetBybubbleSort(arr, 0).toString());
+		 //System.out.println(GetLeastNumbers_Solution(arr,6).toString());
 	}
 }
